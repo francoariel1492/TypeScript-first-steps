@@ -27,4 +27,18 @@ interface Bootle{
     type: number,
 }
 
-identityFour<Bootle>({})
+// identityFour<Bootle>({})
+
+function getSearchProducts<T>(products: T[]): T{
+    //dom some database operations
+    const myIndex = 3
+    return products[myIndex]
+}
+
+//The T is the indicator that you will start with a generic
+const getMoreSearchProducts = <T>(products: T[]):T => {
+    //do some database operations
+    const myIndex = 4
+    return products[myIndex]
+}
+

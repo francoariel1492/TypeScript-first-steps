@@ -16,4 +16,15 @@ function identityThree(val) {
 function identityFour(val) {
     return val;
 }
-identityFour({});
+// identityFour<Bootle>({})
+function getSearchProducts(products) {
+    //dom some database operations
+    const myIndex = 3;
+    return products[myIndex];
+}
+//The T is the indicator that you will start with a generic
+const getMoreSearchProducts = (products) => {
+    //do some database operations
+    const myIndex = 4;
+    return products[myIndex];
+};
