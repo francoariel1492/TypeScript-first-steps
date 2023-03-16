@@ -31,3 +31,24 @@ function isAdminAccount(account) {
         return account.isAdmin;
     }
 }
+//The instance it can only be used where is a potencial
+// word new
+function logValue(x) {
+    if (x instanceof Date) {
+        console.log(x.toUTCString());
+    }
+    else {
+        console.log(x.toUpperCase());
+    }
+}
+function isFish(pet) {
+    return pet.swim !== undefined;
+}
+function getFood(pet) {
+    pet;
+    return "fish food";
+}
+{
+    pet;
+    return "bird food";
+}
