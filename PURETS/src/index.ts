@@ -12,7 +12,7 @@
 //THIS IS THE SAME CODE BUT IN A MORE CLEAR WAY IN MY OPINION
 class User {
 
-  private _courseCount = 1
+  protected _courseCount = 1
   readonly city: string = "Cordoba";
   constructor(
     public email:string,
@@ -41,5 +41,13 @@ class User {
   }
 }
 
+//it can't not acquire private property 
+class SubUser extends User {
+  isFamily: boolean = true
+  changeCourseCount(){
+    this._courseCount = 4
+  }
+
+}
 const franco = new User("franco@parente.com", "Franco");
 // franco.name

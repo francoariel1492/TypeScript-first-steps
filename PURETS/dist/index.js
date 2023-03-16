@@ -34,5 +34,15 @@ class User {
         this._courseCount = courseNum;
     }
 }
+//it can't not acquire private property 
+class SubUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        this._courseCount = 4;
+    }
+}
 const franco = new User("franco@parente.com", "Franco");
 // franco.name
