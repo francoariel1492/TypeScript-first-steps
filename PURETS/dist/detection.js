@@ -25,3 +25,9 @@ function printAll(strs) {
         }
     }
 }
+//We use the in operator
+function isAdminAccount(account) {
+    if ("isAdmin" in account) {
+        return account.isAdmin;
+    }
+}
