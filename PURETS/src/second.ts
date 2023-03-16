@@ -1,29 +1,32 @@
-interface TakePhoto {
-    cameraMode: string
-    filter:string
-    burst: number
-}
+//the word implements is always related with
+// the word interface
 
-interface Story {
-    createStory(): void
-}
-class Instagram implements TakePhoto {
-    constructor(
-        public cameraMode: string,
-        public filter: string,
-        public burst: number
-    ){}
-}
+// interface TakePhoto {
+//     cameraMode: string
+//     filter:string
+//     burst: number
+// }
 
-class Youtube implements TakePhoto, Story{
-    constructor(
-        public cameraMode: string,
-        public filter: string,
-        public burst: number,
-        public short: string
-    ){}
+// interface Story {
+//     createStory(): void
+// }
+// class Instagram implements TakePhoto {
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string,
+//         public burst: number
+//     ){}
+// }
 
-    createStory(): void {
+// class Youtube implements TakePhoto, Story{
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string,
+//         public burst: number,
+//         public short: string
+//     ){}
+
+//     createStory(): void {
         
-    }
-}
+//     }
+// }
