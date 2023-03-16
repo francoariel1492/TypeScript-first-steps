@@ -67,3 +67,11 @@ interface Course{
     author: string,
     subject: string,
 }
+
+class Selleable<T>{
+    public cart: T[] = []
+
+    addToCart(product: T){
+        this.cart.push(product)
+    }
+}

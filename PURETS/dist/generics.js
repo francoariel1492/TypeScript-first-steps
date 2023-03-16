@@ -34,3 +34,11 @@ function anotherFunction(valOne, valTwo) {
         valTwo
     };
 }
+class Selleable {
+    constructor() {
+        this.cart = [];
+    }
+    addToCart(product) {
+        this.cart.push(product);
+    }
+}
