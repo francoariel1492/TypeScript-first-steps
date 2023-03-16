@@ -38,37 +38,78 @@ interface Admin {
 }
 
 //We use the in operator
-function isAdminAccount(account: User | Admin){
-    if("isAdmin" in account){
-        return account.isAdmin
-    }
+function isAdminAccount(account: User | Admin) {
+  if ("isAdmin" in account) {
+    return account.isAdmin;
+  }
 }
 
 //The instance it can only be used where is a potencial
 // word new
 
-function logValue(x: Date | string){
-    if(x instanceof Date){
-        console.log(x.toUTCString());
-    
-    }else {
-        console.log(x.toUpperCase());
+function logValue(x: Date | string) {
+  if (x instanceof Date) {
+    console.log(x.toUTCString());
+  } else {
+    console.log(x.toUpperCase());
+  }
+}
+
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+function getFood(pet: Fish | Bird) {
+  if (isFish(pet)) {
+    pet;
+    return "fish food";
+  } else {
+    pet;
+    return "bird food";
+  }
+}
+
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  side: number;
+}
+
+interface Rectangle {
+  kind: "rectangle";
+  length: number;
+  width: number;
+}
+
+type Shape = Circle | Square | Rectangle
+
+function getTrueShape(shape: Shape){
+    if(shape.kind === "circle"){
+        return Math.PI * shape.radius ** 2
     }
+    // return shape.side * shape.side
 }
 
-type Fish = { swim: () => void}
-type Bird = { fly: () => void}
+function getArea(shape: Shape){
+    switch(shape.kind){
+        case "circle":
+            return Math.PI * shape.radius ** 2
 
-function isFish(pet: Fish | Bird): pet is Fish{
-    return (pet as Fish).swim !== undefined
-}
+        case "square":
+            return shape.side * shape.side
 
-function getFood(pet: Fish | Bird): {
-    if(isFish(pet)){
-        pet
-        return "fish food"
-    }else {
-        pet
-        return "bird food"
+        case "rectangle":
+            return shape.length * shape.width
+        
+        default:
+            const _defaultfornshape: never = shape
+            return _defaultfornshape
     }
 }
